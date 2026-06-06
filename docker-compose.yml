@@ -1,21 +1,21 @@
 version: '3.8'
 
 services:
-  web:
+  uas_dinamis:
     image: citaamlyya/uas_dinamis:latest
     container_name: uas_dinamis
     ports:
       - "3000:80"
     depends_on:
-      - db
+      - uas_db
     environment:
-      DB_HOST: db
+      DB_HOST: uas_db
       DB_USER: usrcompro_2388010006
       DB_PASSWORD: dbcompro_2388010006
       DB_NAME: db_perpustakaan
     restart: unless-stopped
 
-  db:
+  uas_db:
     image: mysql:8.0
     container_name: uas_db
     environment:
@@ -30,7 +30,7 @@ services:
       - ./Web_dinamis/database.sql:/docker-entrypoint-initdb.d/database.sql:ro
     restart: unless-stopped
 
-  statis:
+  uas_statis:
     image: citaamlyya/uas_statis:latest
     container_name: uas_statis
     ports:
