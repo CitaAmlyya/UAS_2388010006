@@ -54,11 +54,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 // ---- Ambil data edit (jika ada) ----
 $edit_novel = null;
+
 if (isset($_GET['edit']) && is_numeric($_GET['edit'])) {
+    $id = intval($_GET['edit']);
+
     $stmt = mysqli_prepare($koneksi, "SELECT * FROM novels WHERE id = ?");
-    mysqli_stmt_bind_param($stmt, "i", intval($_GET['edit']));
+    mysqli_stmt_bind_param($stmt, "i", $id);
     mysqli_stmt_execute($stmt);
-    $edit_novel = mysqli_fetch_assoc(mysqli_stmt_get_result($stmt));
+
+    $result = mysqli_stmt_get_result($stmt);
+    $edit_novel = mysqli_fetch_assoc($result);
+
     mysqli_stmt_close($stmt);
 }
 
