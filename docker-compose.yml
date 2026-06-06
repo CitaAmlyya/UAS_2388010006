@@ -25,7 +25,7 @@ services:
       - "3306:3306"
     volumes:
       - db_data:/var/lib/mysql
-      - ./Web_dinamis/database.sql:/docker-entrypoint-initdb.d/database.sql:ro
+      - /home/ubuntu/project/UAS-ADM/database.sql:/docker-entrypoint-initdb.d/database.sql:ro
     restart: unless-stopped
 
   uas_statis:
