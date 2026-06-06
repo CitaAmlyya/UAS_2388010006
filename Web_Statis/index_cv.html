@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Cita Amelia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            min-height: 100vh;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e1b4b 100%);
+            padding: 80px 24px;
+            text-align: center;
+            border-bottom: 1px solid #312e81;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 400px; height: 400px;
+            border-radius: 50%;
+            background: rgba(99,102,241,0.15);
+            top: -100px; left: -100px;
+            filter: blur(60px);
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 300px; height: 300px;
+            border-radius: 50%;
+            background: rgba(139,92,246,0.12);
+            bottom: -80px; right: -80px;
+            filter: blur(60px);
+        }
+
+        .avatar {
+            width: 120px; height: 120px;
+            border-radius: 50%;
+            border: 3px solid rgba(99,102,241,0.6);
+            margin: 0 auto 20px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 48px;
+            position: relative; z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(to right, #a5b4fc, #c4b5fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative; z-index: 1;
+        }
+        .hero .subtitle {
+            color: #94a3b8;
+            font-size: 1rem;
+            margin-top: 8px;
+            position: relative; z-index: 1;
+        }
+        .hero .nim {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 4px 16px;
+            background: rgba(99,102,241,0.15);
+            border: 1px solid rgba(99,102,241,0.3);
+            border-radius: 999px;
+            font-size: 0.85rem;
+            color: #a5b4fc;
+            position: relative; z-index: 1;
+        }
+
+        /* Container */
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 48px 24px;
+        }
+
+        /* Section */
+        .section {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+        .section-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #a5b4fc;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #334155;
+        }
+        .section-title i { font-size: 1rem; }
+
+        /* Contact row */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            border-radius: 10px;
+            font-size: 0.875rem;
+            color: #94a3b8;
+        }
+        .contact-item i { color: #6366f1; width: 16px; text-align: center; }
+
+        /* Timeline */
+        .timeline-item {
+            padding-left: 20px;
+            border-left: 2px solid #4f46e5;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px; top: 6px;
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            background: #6366f1;
+        }
+        .timeline-item:last-child { margin-bottom: 0; }
+        .timeline-item h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #e2e8f0;
+        }
+        .timeline-item .meta {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin: 4px 0 6px;
+        }
+        .timeline-item p {
+            font-size: 0.875rem;
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .skill-tag {
+            padding: 6px 14px;
+            background: rgba(99,102,241,0.1);
+            border: 1px solid rgba(99,102,241,0.25);
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+
+        /* Project cards */
+        .project-card {
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+        }
+        .project-card:last-child { margin-bottom: 0; }
+        .project-card h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 6px;
+        }
+        .project-card p {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            background: rgba(16,185,129,0.1);
+            border: 1px solid rgba(16,185,129,0.2);
+            border-radius: 6px;
+            font-size: 0.7rem;
+            color: #34d399;
+            margin-right: 6px;
+            margin-top: 8px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 32px;
+            color: #475569;
+            font-size: 0.8rem;
+            border-top: 1px solid #1e293b;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero -->
+    <div class="hero">
+        <div class="avatar">&#128105;</div>
+        <h1>Cita Amelia</h1>
+        <p class="subtitle">Mahasiswi Informatika &mdash; Administrasi Server</p>
+        <span class="nim">NIM: 2388010006</span>
+    </div>
+
+    <div class="container">
+
+        <!-- Kontak -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fa-solid fa-address-card"></i> Informasi Kontak
+            </div>
+            <div class="contact-grid">
+                <div class="contact-item"><i class="fa-solid fa-envelope"></i> cita@gmail.com</div>
+                <div class="contact-item"><i class="fa-brands fa-github"></i> github.com/CitaAmlyya</div>
+                <div class="contact-item"><i class="fa-solid fa-location-dot"></i> Indonesia</div>
+                <div class="contact-item"><i class="fa-solid fa-graduation-cap"></i> Teknik Informatika</div>
+            </div>
+        </div>
+
+        <!-- Pendidikan -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fa-solid fa-book"></i> Pendidikan
+            </div>
+            <div class="timeline-item">
+                <h3>S1 Teknik Informatika</h3>
+                <p class="meta">2023 &ndash; Sekarang</p>
+                <p>Mempelajari dasar-dasar pemrograman, administrasi jaringan dan server, pengembangan web, dan DevOps.</p>
+            </div>
+        </div>
+
+        <!-- Proyek -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fa-solid fa-code"></i> Proyek
+            </div>
+            <div class="project-card">
+                <h3>NoveLib &mdash; Sistem Perpustakaan Novel</h3>
+                <p>Aplikasi web perpustakaan novel berbasis PHP &amp; MySQL dengan fitur login, registrasi, peminjaman novel, dan dashboard admin. Di-deploy menggunakan Docker dan CI/CD GitHub Actions ke AWS EC2.</p>
+                <span class="badge">PHP</span>
+                <span class="badge">MySQL</span>
+                <span class="badge">Docker</span>
+                <span class="badge">GitHub Actions</span>
+                <span class="badge">AWS EC2</span>
+            </div>
+            <div class="project-card">
+                <h3>CV Statis &mdash; Web Profil</h3>
+                <p>Halaman CV statis yang di-serve menggunakan Nginx dalam container Docker, dengan deployment otomatis via GitHub Actions.</p>
+                <span class="badge">HTML</span>
+                <span class="badge">CSS</span>
+                <span class="badge">Nginx</span>
+                <span class="badge">Docker</span>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fa-solid fa-star"></i> Keahlian
+            </div>
+            <div class="skills-grid">
+                <?php
+                $skills = ['PHP','MySQL','HTML','CSS','JavaScript','Docker','Docker Compose','GitHub Actions','AWS EC2','Nginx','Apache','Linux','Git'];
+                foreach ($skills as $s):
+                ?>
+                <span class="skill-tag"><?= $s ?></span>
+                <?php endforeach; ?>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; <?= date('Y') ?> Cita Amelia &mdash; UAS Administrasi Server
+    </footer>
+
+</body>
+</html>
