@@ -51,8 +51,8 @@ jobs:
           port: 22
           script: |
             cd /home/ubuntu/project/UAS-ADM
-            docker compose pull uas-statis
-            docker compose stop uas-statis || true
-            docker compose rm -f uas-statis || true
-            docker compose up -d uas-statis
+            docker compose pull uas_statis
+            docker compose stop uas_statis || true
+            docker compose rm -f uas_statis || true
+            docker compose up -d uas_statis
             echo "[statis] deployed at $(date)"
