@@ -40,7 +40,7 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
-          source: "docker-compose.yml,Web_dinamis/database.sql"
+          source: "docker-compose.yml,database.sql"
           target: "/home/ubuntu/project/UAS-ADM"
 
       - name: Deploy to AWS EC2

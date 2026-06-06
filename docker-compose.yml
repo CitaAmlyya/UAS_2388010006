@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   uas_dinamis:
     image: citaamlyya/uas_dinamis:latest
