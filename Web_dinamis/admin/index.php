@@ -93,7 +93,7 @@ if (isset($_GET['kembalikan']) && is_numeric($_GET['kembalikan'])) {
                     <i class="fa-solid fa-book mr-2"></i>Kelola Novel
                 </a>
                 <a href="../logout.php" class="px-4 py-2 bg-rose-600/10 hover:bg-rose-600 text-rose-400 hover:text-white rounded-lg text-sm font-semibold transition-all">
-                    <i class="fa-solid fa-right-from-bracket mr-2"></i>Keluar
+                    <i class="fa-solid fa-right-from-bracket mr-2"></i>Logout
                 </a>
             </div>
         </div>
