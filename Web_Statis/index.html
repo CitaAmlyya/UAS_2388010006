@@ -44,16 +44,18 @@
             filter: blur(60px);
         }
 
-        .avatar {
-            width: 120px; height: 120px;
+        .avatar-img {
+            width: 130px; /* Sedikit lebih besar untuk menampung border baru */
+            height: 130px;
             border-radius: 50%;
-            border: 3px solid rgba(99,102,241,0.6);
+            /* Double border effect */
+            border: 4px solid #1e293b; 
+            outline: 3px solid rgba(99,102,241,0.6);
             margin: 0 auto 20px;
-            object-fit: cover;
-            background: linear-gradient(135deg, #4f46e5, #7c3aed);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 48px;
+            object-fit: cover; /* Memastikan foto tidak gepeng */
+            display: block;
             position: relative; z-index: 1;
+            background: #334155; /* Warna background jika foto gagal dimuat */
         }
 
         .hero h1 {
@@ -156,7 +158,7 @@
             font-size: 0.8rem;
             color: #64748b;
             margin: 4px 0 6px;
-        }
+            }
         .timeline-item p {
             font-size: 0.875rem;
             color: #94a3b8;
@@ -225,7 +227,9 @@
 
     <!-- Hero -->
     <div class="hero">
-        <div class="avatar">&#128105;</div>
+        <!-- Foto Profil diganti disini -->
+        <img src="foto%20pp.jpeg" alt="Foto Profil Cita Amelia" class="avatar-img">
+        
         <h1>Cita Amelia</h1>
         <p class="subtitle">Mahasiswi Informatika &mdash; Administrasi Server</p>
         <span class="nim">NIM: 2388010006</span>

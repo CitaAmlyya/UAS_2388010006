@@ -28,8 +28,8 @@ services:
       - /home/ubuntu/project/UAS-ADM/database.sql:/docker-entrypoint-initdb.d/database.sql:ro
     restart: unless-stopped
 
-  uas_statis:
-    image: citaamlyya/uas_statis:latest
+uas_statis:
+    build: ./Web_Statis  # Mengarahkan Docker untuk mem-build dari folder Web_Statis
     container_name: uas_statis
     ports:
       - "80:80"
