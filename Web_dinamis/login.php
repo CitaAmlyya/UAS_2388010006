@@ -130,6 +130,7 @@ if (isset($_POST['login'])) {
             <p class="text-sm text-slate-400">
                 Belum punya akun? 
                 <a href="register.php" class="text-indigo-400 font-semibold hover:underline">Daftar Anggota</a>
+                <p class="text-gray-400 text-sm mt-2">Dibuat oleh: Nama - NIM Anda</p>
             </p>
         </div>
     </div>
