@@ -75,7 +75,7 @@ $borrows_result = mysqli_query($koneksi, $borrows_query);
                     <span class="text-sm font-medium text-slate-400">Halo, <strong class="text-slate-100"><?= htmlspecialchars($username); ?></strong></span>
                 </div>
                 <a href="logout.php" class="px-4 py-2 bg-rose-600/10 hover:bg-rose-600 text-rose-400 hover:text-white rounded-lg text-sm font-semibold transition-all duration-300">
-                    <i class="fa-solid fa-right-from-bracket mr-2"></i>Keluar
+                    <i class="fa-solid fa-right-from-bracket mr-2"></i>Logout
                 </a>
             </div>
         </div>
